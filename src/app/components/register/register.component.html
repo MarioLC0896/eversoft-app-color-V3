@@ -1,0 +1,20 @@
+<div class="text-center">
+    <form class="form-signin" [formGroup]="formGroup" (ngSubmit)="crearUsuario()">
+        <div class="row m-0 justify-content-center align-items-center vh-100">
+            <div class="col-sm-4 bg-white">
+                <img class="ml-4" src="http://eversoft.com.mx/img/logo1.png" alt="">
+                <h1 class="h3 mb-3 font-weight-normal">Please complete the information</h1>
+                <label for="inputPassword">Full name</label>
+                <input type="text" formControlName="nombre" class="form-control" placeholder="Full name">
+                <label for="inputEmail">Email address</label>
+                <input type="email" formControlName="correo" class="form-control" placeholder="Email address">
+                <label for="inputPassword">Password</label>
+                <input type="password" formControlName="password" class="form-control" placeholder="Password">
+                <button class="btn mt-2 btn-lg btn-outline-primary btn-block" type="submit">Register</button>
+                <p>Do you have an acount?</p>
+                <p><a routerLink="/login">Sing in here</a></p>
+                <p class="mt-5 mb-3 text-muted">&copy; App by Mario Larios</p>
+            </div>
+        </div>
+    </form>
+</div>

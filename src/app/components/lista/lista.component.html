@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-body mt-1">
+        <h5>Color list</h5>
+        <div class="card float-left mt-2 mr-1" role="alert" *ngFor="let color of colors">
+            <div class="card-header">
+                <input type="hidden" value="{{color.id}}">
+                <h6>{{color.name}}</h6>
+            </div>
+            <div class="card-body">
+                <div class="form-group">{{color.hexadecimal}}<input class="form-control" type="color" value="{{color.hexadecimal}}" disabled></div>
+                <p>{{color.timestamp.seconds * 1000 | date: 'yyyy/MM/dd'}}</p>
+            </div>
+            <div class="card-footer form-gorup">
+                <div>
+                    <button class="btn btn-outline-danger" (click)="eliminar(color)"><i class="far fa-trash-alt"></i></button>
+                    <button class="btn btn-outline-info ml-1" (click)="editar(color)" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-pencil-alt"></i></button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit {{editarColor.id}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="colorEditado()">
+                    <div class="form-group ">
+                        <input type="text" class="form-control" name="name" [(ngModel)]="editarColor.name" placeholder="Add color name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="color" class="form-control" name="hexadecimal" [(ngModel)]="editarColor.hexadecimal" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-outline-primary" type="submit" data-dismiss="modal">
+                            <i class="fas fa-pencil-alt"></i> Save Changes
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal end -->

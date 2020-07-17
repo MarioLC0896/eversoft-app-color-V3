@@ -1,0 +1,18 @@
+<div class="text-center">
+    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="loginUsuario()">
+        <div class="row m-0 justify-content-center align-items-center vh-100">
+            <div class="col-sm-4 bg-white">
+                <img class="ml-4" src="http://eversoft.com.mx/img/logo1.png" alt="">
+                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" formControlName="email" id="inputEmail" class="form-control" placeholder="Email address">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" formControlName="password" id="inputPassword" class="form-control" placeholder="Password">
+                <button class="btn btn-lg btn-outline-primary btn-block mt-2" type="submit">Sign in</button>
+                <p>You don't have an acount?</p>
+                <p><a routerLink="/register">Register here</a></p>
+                <p class="mt-5 mb-3 text-muted">&copy; App by Mario Larios</p>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-body mt-1">
+        <form (ngSubmit)="agregar()">
+
+            <h5>Add color:</h5>
+
+            <div class="form-group ">
+                <input type="text" class="form-control" name="name" placeholder="Add color name" [(ngModel)]="color.name">
+            </div>
+            <div class="form-group">
+                <input type="color" class="form-control" name="hexadecimal" [(ngModel)]="color.hexadecimal">
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-outline-primary" type="submit">
+                    <i class="fas fa-plus-circle "></i> Add color
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+<img src="http://eversoft.com.mx/img/logo1.png" width="300" class="center mt-5 ml-3" alt="eversoft-logo">
